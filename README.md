@@ -1,5 +1,5 @@
 <h1>Projeto Jasport</h1>
-<p>Esse é um pequeno projeto de um sistema de planos esportivos, desenvolvido para o bootcamp Generation Brasil em Java pela equipe formada por [Seu Nome] e [Nome da Sua Amiga]. Ele tem como objetivo ajudar os usuários a gerenciarem seus planos esportivos, permitindo o cadastro, visualização dos planos disponíveis, visualização dos dados cadastrais e cancelamento de planos.</p>
+<p>Esse é um pequeno projeto de um sistema de planos esportivos, desenvolvido para o bootcamp Generation Brasil em Java pela equipe formada por <a href="https://github.com/querenneves">Queren Neves</a> e eu <a href="https://github.com/VinnyPC/VinnyPC">Vinicius Silva</a>. Ele tem como objetivo ajudar os usuários a gerenciarem seus planos esportivos, permitindo o cadastro, visualização dos planos disponíveis, visualização dos dados cadastrais e cancelamento de planos.</p>
 </hr>
 <h2>Funcionalidades</h2>
 </hr>
