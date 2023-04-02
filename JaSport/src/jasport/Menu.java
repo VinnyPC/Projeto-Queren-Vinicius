@@ -1,5 +1,6 @@
 package jasport;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 import jasport.controller.Controller;
@@ -14,7 +15,7 @@ public class Menu {
 		Controller controller = new Controller();
 		Titular titular1 = new Titular(null, null, null,null);
 		int opcao, planos, escolha;
-		String celular, titular, cpf;
+		String celular, titular, cpf = null;
 		float valor;
 
 		while (true) {
@@ -32,10 +33,11 @@ public class Menu {
 			System.out.println("                                                                       ");
 			System.out.println("                                                                       ");
 			System.out.println("                        1 - Cadastrar                                  ");
-			System.out.println("                        2 - Listar planos                              ");
-			System.out.println("                        3 - Cancelar plano                             ");
-			System.out.println("                        4 - Sobre                                      ");
-			System.out.println("                        5 - Sair                                       ");
+			System.out.println("                        2 - Ver planos                                 ");
+			System.out.println("                        3 - Visualizar cadastro                        ");
+			System.out.println("                        4 - Cancelar plano                             ");
+			System.out.println("                        5 - Sobre                                      ");
+			System.out.println("                        0 - Sair                                       ");
 			System.out.println("                                                                       ");
 			System.out.println("°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°");
 			System.out.println("                                                                       ");
@@ -48,41 +50,30 @@ public class Menu {
 		
 			switch (opcao) {
 			case 1:
-			controller.cadastrar(null, null, null);
-			controller.visualizar();
+				controller.cadastrar(null, null, null);
+				controller.escolhaPlano();
+				keyPress();
 			break;
 			
 			case 2:
-
-				switch (controller.listagem()) {
-
-				case 1:
-					System.out.println("Pacote Mensal Basic Todos os Esportes $60,00");
-					titular1.setPlano("Plano básico");
-					break;
-				case 2:
-					System.out.println("Pacote Mensal Premium Todos os Esportes + treinador $100,00");
-					break;
-				case 3:
-					System.out.println("Pacote Anual Basic Todos os Esportes (desconto de 15%) $612,00");
-					break;
-				case 4:
-					System.out.println("Pacote Anual Premium Todos os Esportes + treinador (desconto de  20%) $960,00");
-					break;
-
-				}
-
-				break;
-
+				controller.listaPlanos();
+				keyPress();
+			break;
 			case 3:
-				System.out.println("Cancelar Plano ");
-				System.out.println("Para cancelar um plano, vá presencialmente até a secretaria do local.");
-				System.out.println("Lembre-se que, ao cancelar o plano, não será possível associar-se novamente durante um período de 6 meses.");
-				System.out.println("Boa sorte!");
-					
+				controller.visualizarTitular();
+				keyPress();
 				break;
 			case 4:
-				sobre();
+				System.out.println("Digite o CPF do titular: ");
+				
+				controller.cancelar(cpf);
+				
+				
+				
+				
+				
+				//controller.deletar(cpf);
+				keyPress();
 				break;
 			case 5:
 				leia.close();
@@ -141,5 +132,16 @@ public class Menu {
 		
 
 	}
+	public static void keyPress() {
+		try {
+			System.out.println("Digite Enter para continuar :D");
+			System.in.read();
+		}catch(IOException e) {
+			System.out.println("Digite Enter para continuar :D");
+		}
+		
+		
+	}
+	
 
 }
